@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Card from '../components/ui/Card.astro';
+import Button from '../components/ui/Button.astro';
+import { Image } from 'astro:assets';
+import ctaBgImg from '@assets/photo-1565043589221-1a6fd9ae45c7.jpg';
+---
+
+<BaseLayout title="Kontak & Lokasi Kami">
+
+  <!-- Hero Section -->
+  <section class="relative h-[65vh] min-h-[480px] flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <Image
+        src={ctaBgImg}
+        alt="Astropro Pest Control"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"></div>
+    </div>
+
+    <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center px-4 py-2 mb-6 bg-linear-to-r from-blue-600 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg">
+          🏠 Kantor Pusat
+        </div>
+       
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          AstroPro 
+        </h1>
+       
+        <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+          Basmi Hama & Pest Control Profesional di Yogyakarta
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kantor Pusat + Map -->
+  <Section background="white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Kantor Pusat Kami
+        </h2>
+        <p class="text-xl text-gray-600">
+          Siap melayani kebutuhan basmi hama Anda
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <!-- Alamat -->
+        <div>
+          <Card class="p-8 h-full">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-14 h-14 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0 text-3xl">
+                📍
+              </div>
+              <div>
+                <h3 class="text-3xl font-bold text-gray-900">Astropro Basmi Hama</h3>
+              </div>
+            </div>
+
+            <div class="space-y-8 text-gray-700">
+              <div class="flex gap-5">
+                <div class="text-primary-600 mt-1">📍</div>
+                <div>
+                  <p class="font-semibold text-lg mb-1">Alamat</p>
+                  <p class="leading-relaxed">
+                    Gang Sadewa, Sukoharjo,<br>
+                    Ngaglik, Kabupaten Sleman,<br>
+                    Daerah Istimewa Yogyakarta 55581
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-5">
+                <div class="text-primary-600 mt-1">📞</div>
+                <div>
+                  <p class="font-semibold text-lg mb-1">Telepon / WhatsApp</p>
+                  <a href="tel:082137343229" class="text-3xl font-bold text-primary-600 hover:text-primary-700">
+                    0821-3734-3229
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <Button href="https://wa.me/6282137343229" target="_blank" size="lg" class="w-full text-lg">
+                💬 Chat via WhatsApp
+              </Button>
+            </div>
+          </Card>
+        </div>
+
+        <!-- Google Maps -->
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-100 h-full min-h-[460px]">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.000000000000!2d110.4275961!3d-7.7030898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5c028bb1d1fd%3A0xdd40330137d8b74d!2sGg.%20Sadewa%2C%20Sukoharjo%2C%20Kec.%20Ngaglik%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta%2055581!5e0!3m2!1sen!2sid!4v1720000000000" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Form Kontak -->
+  <Section background="gray">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-4xl font-bold text-gray-900 mb-3">Kirim Pesan</h2>
+        <p class="text-gray-600">Isi form di bawah ini, kami akan segera menghubungi Anda</p>
+      </div>
+
+      <Card class="p-8 md:p-10">
+        <form id="contactForm" action="https://formspree.io/f/xbldnkyq" method="POST" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
+              <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary-500 transition-colors" placeholder="Nama Anda">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Nomor WhatsApp</label>
+              <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary-500 transition-colors" placeholder="0821xxxxxxxx">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+            <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary-500 transition-colors" placeholder="emailanda@example.com">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Layanan yang Dibutuhkan</label>
+            <select name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary-500 transition-colors">
+              <option value="">Pilih Layanan</option>
+              <option value="Basmi Rayap">Basmi Rayap</option>
+              <option value="Basmi Kecoa">Basmi Kecoa</option>
+              <option value="Basmi Semut">Basmi Semut & Serangga Lain</option>
+              <option value="Fogging">Fogging / Fumigasi</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Pesan / Keterangan</label>
+            <textarea name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary-500 transition-colors resize-y" placeholder="Tulis kebutuhan Anda..."></textarea>
+          </div>
+
+          <Button type="submit" size="lg" class="w-full text-lg py-4 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 shadow-xl">
+            ✉️ Kirim Pesan
+          </Button>
+
+          <p class="text-center text-xs text-gray-500 mt-4">
+            Pesan akan dikirim ke <span class="font-medium">bikinweb55@gmail.com</span>
+          </p>
+        </form>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- CTA Section -->
+  <section class="relative py-24 overflow-hidden">
+    <div class="absolute inset-0">
+      <Image src={ctaBgImg} alt="Astropro Pest Control" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-linear-to-r from-blue-900/95 to-teal-900/90"></div>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mx-auto text-center text-white">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Siap Membantu Anda</h2>
+        <p class="text-xl text-slate-200 mb-10">Hubungi kami sekarang untuk survey gratis dan penawaran terbaik</p>
+        
+        <Button href="https://wa.me/6282137343229" size="lg" class="bg-green-600 hover:bg-green-700 text-white shadow-xl text-lg px-10">
+          💬 WhatsApp Kami Sekarang
+        </Button>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../ui/Button.astro';
+import heroBgImg from '@assets/001.png';
+import heroAaImg from '@assets/1.hero.webp';
+---
+
+<section class="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0">
+    <Image 
+      src={heroAaImg}
+      alt="layanan pembasmian hama basmi.id"
+      class="w-full h-full object-cover"
+      width={1000}
+      height={800}
+      decoding="async"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl">
+      <div class="inline-flex items-center px-4 py-2 mb-6 bg-linear-to-r from-blue-600 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg">
+        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+        </svg>
+        Solusi Pembasmian Hama Menyeluruh
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+        Jasa Pembasmi Hama dan 
+        <span class="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400 mt-2">
+          Pest Control
+        </span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-2xl leading-relaxed">
+        Layanan pembersih hama dan pest control terpercaya dengan dukungan tim profesional dan berpengalaman
+      
+      <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <Button href="/rfq" size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
+          Hubungi Kami
+        </Button>
+        <Button href="/capabilities" size="lg" variant="outline" class="border-2! border-white! text-white! hover:bg-white/10! shadow-2xl!">
+          Klien Kami
+        </Button>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/20">
+        <div class="group">
+          <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1"></div>
+          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors"></div>
+        </div>
+        <div class="group">
+          <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1"></div>
+          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors"></div>
+        </div>
+        <div class="group">
+          <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1"></div>
+          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors"></div>
+        </div>
+        <div class="group">
+          <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1"></div>
+          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>
+

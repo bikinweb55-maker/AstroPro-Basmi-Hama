@@ -1,0 +1,67 @@
+---
+const { 
+  phone = '6281234567890', 
+  message = 'Halo, saya ingin bertanya...' 
+} = Astro.props;
+
+const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+---
+
+<a 
+  href={whatsappUrl} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  class="whatsapp-float"
+  aria-label="Chat via WhatsApp"
+>
+  <img 
+    src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" 
+    alt="WhatsApp" 
+    width="65" 
+    height="65"
+  />
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  }
+
+  .whatsapp-float img {
+    width: 65px;
+    height: 65px;
+    display: block;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+
+  .whatsapp-float {
+    animation: pulse 2s infinite;
+  }
+
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      bottom: 15px;
+      right: 15px;
+    }
+    .whatsapp-float img {
+      width: 58px;
+      height: 58px;
+    }
+  }
+</style>
